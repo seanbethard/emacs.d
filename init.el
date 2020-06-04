@@ -17,12 +17,25 @@ There are two things you can do about this warning:
   )
 (package-initialize)
 
+(require 'org)
+(setq org-todo-keywords
+  '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
 (require 'benchmark-init)
 ;; To disable collection of benchmark data after init is done.
 (add-hook 'after-init-hook 'benchmark-init/deactivate)
 
-(add-to-list 'load-path "lisp")
 (setq user-mail-address "sean@seanbethard.info")
+
+(transient-mark-mode 1)
+
+(setq-default inhibit-startup-screen t)
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+(setq initial-scratch-message "->")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

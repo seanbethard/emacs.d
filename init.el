@@ -31,6 +31,8 @@ There are two things you can do about this warning:
 (setq user-mail-address "sean@seanbethard.info")
 
 (transient-mark-mode 1)
+(show-paren-mode 1)
+(global-display-line-numbers-mode)
 
 (setq-default inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
